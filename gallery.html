@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Ells Garden</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#1f2230;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.page{
+  background:#f4f4f4;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+/* TOP BAR */
+.top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 25px;
+  border-bottom:2px solid #2c7fb0;
+  background:#f3f3f3;
+}
+
+.left-group{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.search-box{
+  width:340px;
+  height:58px;
+  border:3px solid #12394a;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 15px;
+  border-radius:12px;
+}
+
+.search-box input{
+  border:none;
+  outline:none;
+  font-size:22px;
+  width:100%;
+}
+
+.search-icon{
+  font-size:28px;
+}
+
+.lang-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:22px;
+}
+
+.lang-box select{
+  border:none;
+  background:transparent;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.logo{
+  border:4px solid #12394a;
+  border-radius:50px;
+  padding:15px 35px;
+  font-size:34px;
+  font-weight:bold;
+  color:#1d5e2b;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 30px;
+  border-bottom:2px solid #6fa9c4;
+}
+
+header h1{
+  font-size:35px;
+}
+
+.logo{
+  border:3px solid #0b3850;
+  border-radius:50px;
+  padding:15px 30px;
+  color:#1d5e2b;
+  font-weight:bold;
+}
+
+.gallery{
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+footer{
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  border-top:2px solid #6fa9c4;
+  text-align:center;
+}
+
+footer div{
+  padding:20px;
+  border-right:1px solid #6fa9c4;
+}
+
+footer div:last-child{
+  border-right:none;
+}
+
+/* Menu */
+nav{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:20px;
+  background:white;
+}
+
+nav a{
+  background:#0f6487;
+  color:white;
+  text-decoration:none;
+  padding:12px 25px;
+  font-size:18px;
+  border:2px solid #08384d;
+}
+
+nav a:hover{
+  background:#0b4f6b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="top-bar">
+  <div class="left-group">
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <span class="search-icon">⌕</span>
+    </div>
+    <div class="lang-box">
+      🌍
+      <select>
+        <option>EN</option>
+        <option>TN</option>
+      </select>
+    </div>
+  </div>
+  <div class="logo">ELLS<br>GARDEN</div>
+</div>
+
+<nav>
+  <a href="index.html" id="home">Homepage</a>
+  <a href="gallery.html" id="gallery">Gallery</a>
+  <a href="about us.html" id="about">About Us</a>
+  <a href="events.html" id="events">Events</a>
+  <a href="pricing.html" id="pricing">Pricing</a>
+  <a href="location.html" id="location">Location</a>
+  <a href="contact us.html" id="contact">Contact Us</a>
+</nav>
+
+<section class="gallery">
+  <img src="images/flowers.jpg">
+  <img src="images/garden.jpg">
+  <img src="images/gardenfront.jpg">
+  <img src="images/gardenfront2.jpg">
+  <img src="images/pool1.1.jpg">
+  <img src="images/overview.jpg">
+</section>
+
+<footer>
+  <div>Contact us</div>
+  <div>Social Media: TikTok: @ells.garden Facebook: @ELLS</div>
+  <div>b2nkwe@yahoo.com</div>
+</footer>
+
+</div>
+
+<script>
+const translations = {
+  en:{
+    home:"HOME",
+    gallery:"GALLERY",
+    about:"ABOUT US",
+    events:"EVENTS",
+    pricing:"PRICING",
+    location:"LOCATION",
+    contact:"CONTACT US",
+    feedback:"FEEDBACK"
+  },
+  tn:{
+    home:"Gae",
+    gallery:"Ditshwantsho",
+    about:"Ka Rona",
+    events:"Ditiragalo",
+    pricing:"Ditlhwatlhwa",
+    location:"Lefelo",
+    contact:"Ikgolaganye",
+    feedback:"Maikutlo"
+  }
+};
+
+function setLanguage(lang){
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    const id = link.id;
+    if (translations[lang][id]) {
+      link.textContent = translations[lang][id];
+    }
+  });
+  localStorage.setItem("language", lang);
+}
+
+window.onload = function(){
+  const savedLang = localStorage.getItem("language") || "en";
+  setLanguage(savedLang);
+}
+</script>
+
+</body>
+</html>
