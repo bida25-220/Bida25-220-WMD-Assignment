@@ -4,144 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services - Ells Garden</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:Arial, sans-serif;
-  background:#f2f2f2;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-/* Top Bar */
-.top-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px;
-  background:white;
-  border-bottom:2px solid #1f6c8f;
-}
-
-.left-group{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.search-box{
-  display:flex;
-  align-items:center;
-  border:2px solid #373c3e;
-  width:320px;
-  padding:10px;
-}
-
-.search-box input{
-  border:none;
-  outline:none;
-  width:100%;
-  font-size:20px;
-}
-
-.lang-select{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.lang-select select{
-  padding:8px;
-}
-
-.logo{
-  border:3px solid #0b3850;
-  border-radius:50px;
-  padding:15px 30px;
-  font-size:28px;
-  font-weight:bold;
-  color:#1d5e2b;
-}
-
-/* Menu */
-nav{
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  padding:20px;
-  background:white;
-}
-
-nav a{
-  background:#0f6487;
-  color:white;
-  text-decoration:none;
-  padding:12px 25px;
-  font-size:18px;
-  border:2px solid #08384d;
-}
-
-nav a:hover{
-  background:#0b4f6b;
-}
-
-#pricing-section{
-  flex:1;
-  padding:40px;
-  background:white;
-  margin:20px;
-  border-radius:10px;
-}
-
-/* Footer */
-footer{
-  display:grid;
-  grid-template-columns:1fr 2fr 1fr;
-  background:white;
-  border-top:2px solid #1f6c8f;
-  text-align:center;
-}
-
-footer div{
-  padding:25px;
-  border-right:1px solid #1f6c8f;
-}
-
-footer div:last-child{
-  border-right:none;
-}
-
-/* Mobile */
-@media(max-width:768px){
-  nav{
-    flex-wrap:wrap;
-    gap:10px;
-  }
-
-  footer{
-    grid-template-columns:1fr;
-  }
-
-  footer div{
-    border-right:none;
-    border-bottom:1px solid #1f6c8f;
-  }
-
-  footer div:last-child{
-    border-bottom:none;
-  }
-}
-</style>
 </head>
 
-<body>
+<body class="page-pricing">
 
 <!-- Top Bar -->
 <div class="top-bar">
@@ -161,7 +29,7 @@ footer div:last-child{
     </div>
   </div>
 
-  <div class="logo">ELLS GARDEN</div>
+  <img class="logo-img" src="images/logom.png" alt="logo" width="200px" height="100px">
 
 </div>
 
@@ -237,12 +105,12 @@ footer div:last-child{
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <div id="footer1">Contact us</div>
-  <div>Social Media: TikTok: @ells.garden Facebook: @ELLS</div>
-  <div id="footer3">b2nkwe@yahoo.com</div>
+  <div><a href="contact us.html">Contact us</a></div>
+  <div>Follow us:<i class="fa-brands fa-tiktok"></i>    <i class="fa-brands fa-facebook"></i>   <i class="fa-brands fa-whatsapp"></i> </div>
+  <div>b2nkwe@yahoo.com</div>
 </footer>
+<div class="copyright">© 2026 Ells Garden. All rights reserved.</div>
 
 <script>
 const translations = {
